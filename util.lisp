@@ -4,12 +4,11 @@
   '(*ren/terminals*
      *ren/browswer-list*))
 
-
-
 (defun shell-command (command)
   (check-type command string)
   (echo-string (current-screen) (run-shell-command commant t)))
 
+(defvar *wallpapers* "/home/rendlein/.wallpapers")
 (defun random-background ()
   (let ((file-list (directory (concat *wallpapers* "*.*")))
        (*random-state* (make-random-state t)))
