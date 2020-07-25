@@ -2,7 +2,7 @@
 
 (export 
   '(*ren/terminals*
-     *ren/browswer-list*))
+     *ren/browswers*))
 
 (defun shell-command (command)
   (check-type command string)
@@ -15,7 +15,7 @@
     (namestring (nth (random ( length file-list)) file-list))))
 
 
-;;; Found in alezost's stumpwm config
+;;; Found in alezost's stumpwm config. Changed to fit my applications and prefix.
 ;;; github.com/alezost/stumpwm-config
 (defun ren/executable? (name)
   (zerop
@@ -26,8 +26,9 @@
                  :ignore-error-status t))))
 
 (defvar *ren/browsers* 
-  '(("chromium" . "Chromium")
-    ("fFirefox" . "firefox")))
+  '(("brave" . "Brave-browser")
+    ("chromium" . "Chromium")
+    ("firefox" . "firefox")))
 
 (defvar *ren/current-browser*
   nil)

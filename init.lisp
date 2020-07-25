@@ -13,9 +13,10 @@
 
 ;;; Set the cursor to be an actual cursor instead of an X
 (run-shell-command "xsetroot -cursor_name left_ptr")
+(run-shell-command "feh --bg-scale /home/rendlein/.wallpapers/748350.png")
 
+;;; Load the other parts of the configuration
 (ren/load-file "util")
 (ren/load-file "keys")
 (ren/load-file "groups")
 
-(run-shell-command "feh --bg-scale /home/rendlein/.wallpapers/748350.png")
