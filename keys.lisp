@@ -29,7 +29,7 @@
 
 
 (defcommand dmenu () () 
-            (run-shell-command "dmenu_run"))
+            (run-shell-command "dmenu_run -l 3 -g 3"))
 (defcommand reinit () ()
             (run-commands "reload" "loadrc"))
 
