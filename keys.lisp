@@ -28,8 +28,28 @@
 (define-key *top-map*  (kbd "M-T") "touch_toggle")
 
 
+;;; ALSA Volume Control
+(defcommand vol-up () ()
+            (run-shell-command "amixer set Master 2%+"))
+(defcommand vol-down () () 
+            (run-shell-command "amixer set Master 2%-"))
+(defcommand vol-mute () ()
+            (run-shell-command "amixer set Master toggle"))
+(define-key *top-map*  (kbd "XF86AudioMute") "vol-mute")
+(define-key *top-map*  (kbd "XF86AudioRaiseVolume") "vol-up")
+(define-key *top-map*  (kbd "XF86AudioLowerVolume") "vol-down")
+
+
+;;; Backlight Control
+(defcommand backlight-up () ()
+            (run-shell-command "xbacklight -inc 10"))
+(defcommand backlight-down () ()
+            (run-shell-command "xbacklight -dec 10"))
+(define-key *top-map*  (kbd "XF86MonBrightnessUp") "backlight-up")
+(define-key *top-map*  (kbd "XF86MonBrightnessDown") "backlight-down")
+
 (defcommand dmenu () () 
-            (run-shell-command "dmenu_run -l 3 -g 3"))
+            (run-shell-command "dmenu_run"))
 (defcommand reinit () ()
             (run-commands "reload" "loadrc"))
 

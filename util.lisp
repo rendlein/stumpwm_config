@@ -52,7 +52,7 @@
                   (run-or-raise (car browser) `(:class ,(cdr browser))))))
 
 (defvar *ren/terminals*
-  '(("st" . "st-256color")
+  '(("st -e ~/.bin/tm" . "st-256color")
     ("xterm" . "XTerm")))
 
 (defvar *ren/current-terminal*
